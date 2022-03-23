@@ -47,11 +47,7 @@ module.exports = {
     optimization: {
         minimize: true,
         minimizer: [
-            new UglifyJsPlugin({
-                cache: true,
-                parallel: true,
-                sourceMap: true
-            }),
+            new UglifyJsPlugin(),
             new CssminiPlugin()
         ]
     },
