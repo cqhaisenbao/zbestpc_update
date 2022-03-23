@@ -12,6 +12,14 @@ module.exports = {
         filename: 'js/[name].js',
         path: path.resolve(__dirname, 'dist')
     },
+    devServer: {
+        static: {
+            directory: path.resolve(__dirname, 'dist')
+        },
+        compress: true,
+        port: 9000,
+        hot: true,
+    },
     module: {
         rules: [
             {
@@ -19,7 +27,7 @@ module.exports = {
                 use: ['style-loader', 'css-loader']
             },
             {
-                test:/\.(png|svg|jpg|jpeg|gif)$/i,
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 type: "asset",
                 parser: {
                     dataUrlCondition: {
