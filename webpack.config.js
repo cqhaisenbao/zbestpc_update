@@ -4,6 +4,7 @@ const htmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const CssminiPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -50,7 +51,8 @@ module.exports = {
                 cache: true,
                 parallel: true,
                 sourceMap: true
-            })
+            }),
+            new CssminiPlugin()
         ]
     },
     plugins: [
