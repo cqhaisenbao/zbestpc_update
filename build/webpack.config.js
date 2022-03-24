@@ -9,17 +9,17 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 module.exports = {
     entry: {
-        index: './src/index.js',
-        login: './src/login.js',
+        index: path.resolve(__dirname, '../src/index.js'),
+        login: path.resolve(__dirname, '../src/login.js'),
     },
     mode: "development",
     output: {
         filename: 'js/[name].js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, '../dist')
     },
     devServer: {
         static: {
-            directory: path.resolve(__dirname, 'dist')
+            directory: path.resolve(__dirname, '../dist')
         },
         compress: true,
         port: 9000,
@@ -88,8 +88,8 @@ module.exports = {
         new CopyWebpackPlugin({
             patterns: [
                 {
-                    from: path.resolve(__dirname, 'src/img'),
-                    to: path.resolve(__dirname, 'dist/img')
+                    from: path.resolve(__dirname, '../src/img'),
+                    to: path.resolve(__dirname, '../dist/img')
                 }
             ]
         })
