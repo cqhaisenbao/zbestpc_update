@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "webpack-dev-server --config build/webpack.vue.config.js --open",
     "build": "webpack --config build/webpack.config.js",
+    "build:vue": "webpack --config build/webpack.vue.config.js",
     "dev": "webpack-dev-server"
   },
   "keywords": [],
