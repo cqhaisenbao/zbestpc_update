@@ -49,7 +49,20 @@ module.exports = {
         minimizer: [
             new UglifyJsPlugin(),
             new CssminiPlugin()
-        ]
+        ],
+        splitChunks: {  // 分离node_modules里的模块，减少index.js的体积
+            minSize: 30 * 1024,  //大于30kb的库会被单独打包
+            chunks: "all",
+            name:'common', //指定公共代码打包后的名字
+            cacheGroups: {
+                //第三方库单独打包
+                jquery:{
+                    test: /jquery/,
+                    name: 'jquery',
+                    chunks: 'all',
+                },
+            }
+        }
     },
     plugins: [
         new htmlWebpackPlugin({
