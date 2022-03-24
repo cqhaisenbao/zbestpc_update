@@ -1,11 +1,15 @@
 <template>
   <div id="app">
-    <Home/>
+    <router-view/>
   </div>
 </template>
 
 <script setup>
-import Home from './Home.vue'
 </script>
 
-<style></style>
+<style>
+  #app {
+    height: 100vh;
+    width: 100vw;
+  }
+</style>
