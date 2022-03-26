@@ -7,6 +7,7 @@
     "start": "webpack-dev-server --config build/webpack.vue.config.js --open",
     "build": "webpack --config build/webpack.config.js",
     "build:vue": "webpack --config build/webpack.vue.config.js",
+    "build:mpa": "rm -rf dist && webpack --config build/webpack.vue.mpa.config.js",
     "dev": "webpack-dev-server"
   },
   "keywords": [],
